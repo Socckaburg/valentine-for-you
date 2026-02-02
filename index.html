@@ -165,9 +165,9 @@
 
   <script>
     const music = document.getElementById("bgMusic");
-    let musicStarted = false;
+    let musicStarted = false; // musik sudah mulai?
 
-    // Musik mulai saat layar pertama disentuh
+    // musik mulai saat layar pertama disentuh, sekali saja
     document.addEventListener("click", () => {
       if (!musicStarted) {
         music.currentTime = 25; // mulai dari detik ke-25
@@ -180,10 +180,14 @@
     function yesClick() {
       document.getElementById("answer").innerHTML =
         "Yay! Terima kasih sudah menjadi Valentine-ku 🤍💖";
-      music.currentTime = 25; // mulai dari detik ke-25
-      music.volume = 0.4;
-      music.play();
-      musicStarted = true;
+
+      // musik hanya akan mulai jika belum jalan
+      if (music.paused) {
+        music.currentTime = 25;
+        music.volume = 0.4;
+        music.play();
+        musicStarted = true;
+      }
     }
 
     function moveNo() {
