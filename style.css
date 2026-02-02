@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a1a2f;
+  color: white;
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  text-align: center;
+  padding: 80px 20px;
+  background: radial-gradient(circle, #122b45, #071524);
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+p {
+  max-width: 500px;
+  margin: auto;
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#musicBtn {
+  background: transparent;
+  border: 2px solid #1e90ff;
+  color: #1e90ff;
+  margin-bottom: 30px;
+}
+
+#giftBtn {
+  background: #1e90ff;
+  color: white;
+  margin-top: 30px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.icon {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+#photoBox {
+  text-align: center;
+}
+
+#photoBox img {
+  width: 200px;
+  margin: 10px;
+  animation: float 4s infinite ease-in-out;
+}
+
+.letter {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.question {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.choice {
+  margin-top: 20px;
+}
+
+#yesBtn {
+  background: #1e90ff;
+  color: white;
+}
+
+#noBtn {
+  background: #555;
+  color: white;
+}
+
+#finalMessage {
+  position: fixed;
+  inset: 0;
+  background: #0a1a2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  text-align: center;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
