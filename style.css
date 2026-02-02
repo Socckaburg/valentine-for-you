@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0a1a2f;
+  background: #08182f;
   color: white;
   overflow-x: hidden;
 }
@@ -9,21 +9,23 @@ body {
 .hero {
   min-height: 100vh;
   text-align: center;
-  padding: 80px 20px;
-  background: radial-gradient(circle, #122b45, #071524);
+  padding: 90px 20px;
+  background:
+    radial-gradient(circle, rgba(30,144,255,.15), transparent),
+    linear-gradient(#061427, #020b18);
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.6em;
 }
 
 p {
-  max-width: 500px;
+  max-width: 520px;
   margin: auto;
 }
 
 button {
-  padding: 12px 25px;
+  padding: 12px 26px;
   border-radius: 30px;
   border: none;
   cursor: pointer;
@@ -32,9 +34,9 @@ button {
 
 #musicBtn {
   background: transparent;
-  border: 2px solid #1e90ff;
-  color: #1e90ff;
-  margin-bottom: 30px;
+  border: 2px solid #4da6ff;
+  color: #4da6ff;
+  margin-bottom: 35px;
 }
 
 #giftBtn {
@@ -46,12 +48,12 @@ button {
 .icons {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin: 50px 0;
+  gap: 35px;
+  margin: 60px 0;
 }
 
 .icon {
-  font-size: 40px;
+  font-size: 42px;
   cursor: pointer;
 }
 
@@ -60,24 +62,21 @@ button {
 }
 
 #photoBox img {
-  width: 200px;
+  width: 210px;
   margin: 10px;
-  animation: float 4s infinite ease-in-out;
+  border-radius: 12px;
+  animation: float 5s infinite ease-in-out;
 }
 
 .letter {
-  max-width: 600px;
+  max-width: 650px;
   margin: auto;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .question {
-  padding: 80px 20px;
+  padding: 90px 20px;
   text-align: center;
-}
-
-.choice {
-  margin-top: 20px;
 }
 
 #yesBtn {
@@ -86,18 +85,18 @@ button {
 }
 
 #noBtn {
-  background: #555;
+  background: #444;
   color: white;
 }
 
 #finalMessage {
   position: fixed;
   inset: 0;
-  background: #0a1a2f;
+  background: #061427;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1.6em;
   text-align: center;
   z-index: 10;
 }
@@ -108,6 +107,6 @@ button {
 
 @keyframes float {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-25px); }
   100% { transform: translateY(0); }
 }
