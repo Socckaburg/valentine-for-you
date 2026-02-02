@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Valentine 🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffe4ec, #ffffff);
+      color: #333;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: auto;
+      padding: 60px 20px 140px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #e2558b;
+      font-size: 2.4em;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin: 22px 0;
+    }
+
+    .heart {
+      font-size: 42px;
+      animation: beat 1.2s infinite;
+      margin: 20px 0;
+    }
+
+    .box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      margin: 36px 0;
+    }
+
+    .btn-area {
+      position: relative;
+      height: 120px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 26px;
+      border: none;
+      border-radius: 25px;
+      background: #e2558b;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    #noBtn {
+      position: absolute;
+      left: 150px;
+      top: 0;
+      background: #ccc;
+      color: #333;
+    }
+
+    #answer {
+      margin-top: 28px;
+      font-size: 1.3em;
+      color: #e2558b;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      opacity: 0.6;
+    }
+
+    .love {
+      position: fixed;
+      bottom: 0;
+      font-size: 24px;
+      animation: fly 2.5s linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes fly {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-220px) scale(1.5); opacity: 0; }
+    }
+
+    @keyframes beat {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop>
+    <source src="onlyone.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>Happy Valentine 🤍</h1>
+    <div class="heart">❤️</div>
+
+    <div class="box">
+      <p>
+        Hari ini mungkin terlihat seperti hari biasa,<br>
+        tapi entah kenapa rasanya berbeda.<br>
+        Ada perasaan hangat yang pelan-pelan tumbuh,<br>
+        hanya karena memikirkan kamu.
+      </p>
+
+      <p>
+        Kamu hadir bukan dengan janji besar,<br>
+        tapi dengan hal-hal sederhana:<br>
+        perhatian kecil, tawa yang jujur,<br>
+        dan rasa nyaman yang sulit dijelaskan dengan kata-kata.
+      </p>
+
+      <p>
+        Aku tidak tahu seperti apa masa depan nanti,<br>
+        tapi aku tahu satu hal—<br>
+        aku ingin menjalaninya dengan tenang,<br>
+        bersama seseorang yang membuatku merasa pulang.
+      </p>
+
+      <p>
+        Jika hari-hari terasa berat,<br>
+        semoga aku bisa jadi tempatmu bersandar.<br>
+        Jika dunia terasa terlalu ramai,<br>
+        semoga kehadiranku bisa menenangkan.
+      </p>
+
+      <p>
+        Ini bukan tentang kesempurnaan,<br>
+        tapi tentang memilih untuk tetap ada,<br>
+        belajar, tumbuh, dan berjalan perlahan<br>
+        dalam arah yang sama.
+      </p>
+    </div>
+
+    <h2>Will you be my Valentine? 💕</h2>
+
+    <div class="btn-area">
+      <button onclick="yesClick()">Yes 💖</button>
+      <button id="noBtn" onmouseover="moveNo()">No 🙈</button>
+    </div>
+
+    <div id="answer"></div>
+
+    <footer>
+      Scroll pelan-pelan ya 🤍
+    </footer>
+  </div>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    let musicStarted = false;
+
+    // Musik mulai saat layar pertama disentuh
+    document.addEventListener("click", () => {
+      if (!musicStarted) {
+        music.currentTime = 25; // mulai dari detik ke-25
+        music.volume = 0.4;
+        music.play();
+        musicStarted = true;
+      }
+    });
+
+    function yesClick() {
+      document.getElementById("answer").innerHTML =
+        "Yay! Terima kasih sudah menjadi Valentine-ku 🤍💖";
+      music.currentTime = 25; // mulai dari detik ke-25
+      music.volume = 0.4;
+      music.play();
+      musicStarted = true;
+    }
+
+    function moveNo() {
+      const btn = document.getElementById("noBtn");
+      btn.style.left = Math.random() * 220 + "px";
+      btn.style.top  = Math.random() * 60 + "px";
+    }
+
+    window.addEventListener("scroll", () => {
+      const love = document.createElement("div");
+      love.className = "love";
+      const hearts = ["❤️","💖","💕","💘","💗"];
+      love.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+      love.style.left = Math.random() * 90 + "vw";
+      document.body.appendChild(love);
+      setTimeout(() => love.remove(), 2500);
+    });
+  </script>
+
+</body>
+</html>
